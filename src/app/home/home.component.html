@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="content" class="content content-full-width">
+                <div class="profile-content">
+                    <div class="profile">
+                        <div class="profile-header">
+                            <div class="profile-header-cover"></div>
+                            <div class="profile-header-content">
+                                <div class="profile-header-img">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                                </div>
+                                <div class="profile-header-info">
+                                    <h4 class="m-t-10 m-b-5">{{connectedUser.firstName}}</h4>
+                                    <br><br>
+                                    <br><br>
+                                </div>
+                            </div>
+                            <ul class="profile-header-tab nav nav-tabs">
+                                <li class="nav-item"><a routerLink="/profile" class="nav-link"
+                                        data-toggle="tab">PROFILE</a></li>
+                                <li class="nav-item"><a routerLink="/home" class="nav-link active show"
+                                        data-toggle="tab">HOME</a></li>
+                                <li class="nav-item"><a  routerLink="/" (click)="logout()" class="nav-link" data-toggle="tab">LOGOUT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content p-0">
+                        <div class="tab-pane fade active show" id="profile-post">
+                            <ul class="timeline">
+                                <li *ngFor="let post of posts">
+                                    <div class="timeline-time">
+                                        <span class="date">{{post.createdDate | date: 'dd/MM/yyyy'}}</span>
+                                        <span class="time">{{post.createdDate | date: 'hh:mm'}}</span>
+                                    </div>
+                                    <div class="timeline-icon">
+                                        <a href="javascript:;">&nbsp;</a>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <div class="timeline-header">
+                                            <span class="userimage"><img
+                                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                    alt=""></span>
+                                            <span class="username">{{post.user.firstName}} {{post.user.lastName}}
+                                            </span>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p>
+                                                {{post.content}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

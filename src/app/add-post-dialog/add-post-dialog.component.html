@@ -1,0 +1,15 @@
+<div class="dialog">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="postForm">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Post content</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        formControlName="content"></textarea>
+                </div><br>
+                <button class="btn btn-sm btn-info mb-2" [disabled]="postForm.invalid" (click)="addPost()">Add
+                    post</button>
+            </form>
+        </div>
+    </div>
+</div>
